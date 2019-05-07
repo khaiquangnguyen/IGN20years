@@ -2,7 +2,7 @@
 // to convert date object
 var dateParse = d3.timeParse("%Y");
 const GENRES = ['Action', 'Adventure', 'Board', 'Card', 'Educational', 'Fighting', 'Hunting', 'Music', 'Party', 'Platformer', 'Puzzle', 'RPG', 'Racing', 'Shooter', 'Simulation', 'Sports', 'Strategy'];
-const PLATFORMS = ['Dreamcast', 'Game Boy (Color, Advance)', 'GameCube', 'Mobile', 'Nintendo (DS, 3DS, DSi)', 'Nintendo 64', 'PC', 'PlayStation (1, 2 ,3, 4)', 'PlayStation (Portable, Vita)', 'Wii (U)', 'Xbox (360, One)', 'iPad'];
+const PLATFORMS = ['Dreamcast', 'Game Boy (C/A)', 'GameCube', 'Mobile', 'DS/3DS/DSi', 'Nintendo 64', 'PC', 'PlayStation (1-4)', 'PSP/Vita', 'Wii (U)', 'Xbox (360, One)', 'iPad'];
 var genre_selections = GENRES;
 var platform_selections = PLATFORMS;
 const TRANSITION_DURTAION = 500;
@@ -235,8 +235,8 @@ d3.queue()
             .attr("width", x_scatter.bandwidth())
             .attr("height", function (d) { return height_scatter - y_scatter(d.frequency); })
             .on("mouseover", function (d) {
-              const circle = this;
-              console.log(circle);
+                const circle = this;
+                console.log(circle);
                 scatter_tooltip.transition()
                     .duration(200)
                     .style("opacity", .9);
@@ -417,7 +417,7 @@ d3.queue()
 
 
         var legendObject = genre_plot.append("g")
-          .style("font-size", "10pt")
+            .style("font-size", "10pt")
             .attr("class", "legend")
             .attr("transform", "translate(" + legendOffset.toString() + ",0)");
 
@@ -510,7 +510,7 @@ d3.queue()
                 (height_genre + margin_genre.top) + ")")
             .style("text-anchor", "middle")
             .text("Years")
-            .style("font-size", "18px");2
+            .style("font-size", "18px"); 2
         platform_plot.append("text")
             .attr("transform",
                 "translate(" + (width_genre / 2) + " ," +
@@ -651,46 +651,46 @@ d3.queue()
 
 function circleLegend(selection) {
 
-  var linearScale = d3.scaleLinear()
-    .domain([0, 100])
-    .range([0, 20]);
+    var linearScale = d3.scaleLinear()
+        .domain([0, 100])
+        .range([0, 20]);
 
-  var sqrtScale = d3.scaleSqrt()
-    .domain([0, 1391])
-    .range([0, 15]);
+    var sqrtScale = d3.scaleSqrt()
+        .domain([0, 1391])
+        .range([0, 15]);
 
-  var myData = [200, 400, 600, 800, 1000, 1200, 1400];
+    var myData = [200, 400, 600, 800, 1000, 1200, 1400];
 
-  const s = selection.append('g')
-    .attr('class', 'legend')
-    .attr("transform", `translate(${width_scatter + margin_scatter.left + 20}, ${HEIGHT / 7})`)
+    const s = selection.append('g')
+        .attr('class', 'legend')
+        .attr("transform", `translate(${width_scatter + margin_scatter.left + 20}, ${HEIGHT / 7})`)
 
     s.selectAll('circle')
-    .data(myData)
-    .enter()
-    .append('circle')
-    .attr('fill', genres_colors[0])
-    .attr('r', function(d) {
-      return sqrtScale(d);
-    })
-    .attr('cy', function(d) {
-      return linearScale(d);
-    });
+        .data(myData)
+        .enter()
+        .append('circle')
+        .attr('fill', genres_colors[0])
+        .attr('r', function (d) {
+            return sqrtScale(d);
+        })
+        .attr('cy', function (d) {
+            return linearScale(d);
+        });
 
-  s.selectAll('text')
-    .data(myData)
-    .enter()
-    .append('text')
-    .text(d => d)
-    .attr('x', function(d) {
-      return 20;
-    })
-    .attr('y', function(d) {
-      return linearScale(d) + 5;
-    });
+    s.selectAll('text')
+        .data(myData)
+        .enter()
+        .append('text')
+        .text(d => d)
+        .attr('x', function (d) {
+            return 20;
+        })
+        .attr('y', function (d) {
+            return linearScale(d) + 5;
+        });
 
 
-  //   }
-  // }
+    //   }
+    // }
 
 }
