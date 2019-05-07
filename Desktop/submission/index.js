@@ -2,7 +2,7 @@
 // to convert date object
 var dateParse = d3.timeParse("%Y");
 const GENRES = ['Action', 'Adventure', 'Board', 'Card', 'Educational', 'Fighting', 'Hunting', 'Music', 'Party', 'Platformer', 'Puzzle', 'RPG', 'Racing', 'Shooter', 'Simulation', 'Sports', 'Strategy'];
-const PLATFORMS = ['Dreamcast', 'Game Boy (C/A)', 'GameCube', 'Mobile', 'DS/3DS/DSi', 'Nintendo 64', 'PC', 'PlayStation (1-4)', 'PSP/Vita', 'Wii (U)', 'Xbox (360, One)', 'iPad'];
+const PLATFORMS = ['Dreamcast', 'Game Boy (C/A)', 'GameCube', 'Mobile', 'DS/3DS/DSi', 'Nintendo 64', 'PC', 'PlayStation (1-4)', 'PSP/Vita', 'Wii (U)', 'Xbox (360,One)', 'iPad'];
 var genre_selections = GENRES;
 var platform_selections = PLATFORMS;
 const TRANSITION_DURTAION = 500;
