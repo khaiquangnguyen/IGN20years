@@ -1,80 +1,45 @@
-<!DOCTYPE HTML>
-<html xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
+
 <head>
-  <title>CSE512 | A3 [Add: title]</title>
-  <style media="all">
-* { padding: 0; margin: 0; }
- body {
-  margin: 0 auto 0 auto;
-  padding: 0;
-  max-width: 1200px;
-  font-family: "Avenir", "Avenir Next", Helvetica Neue, Arial;
-  font-size: 0.95em;
-}
- a, a:visited { text-decoration: none; color: #7533f4; }
-a:hover { text-decoration: underline; color: #f4b014; }
- h1, h2, h3, h4, h5 {
-  color: #492a7c;
-  background-color: inherit;
-  font-weight: normal;
-  padding: 0 0 5px 0;
-  margin: 15px 0 0 0;
-  border: none;
-  clear: right;
-}
-h1 { font-size: 24pt; margin:  5px 0 10px 0; line-height: 28px; }
-h2 { font-size: 14pt; margin: 30px 0 15px 0; letter-spacing: 0.01em; border-bottom: 1px solid #ccc;  line-height: 20px;}
-h3 { font-size: 13pt; }
-h4 { font-size: 12pt; }
-h5 { font-size: 11pt; }
-p { margin: 0 0 10px 0; }
- .content {
-  margin: 0;
-  padding: 15px 20px;
-  background-color: #ffffff;
-}
- .title, .title h1, .title a {
-  color: #492a7c;
-  font-size: 24pt;
-  margin-bottom: 20px;
-  margin-top: 5px;
-}
- .footer {
-  border-top: 1px solid #ccc;
-  margin-top: 30px;
-  padding-top: 4px;
-  text-align: right;
-  font-size: 12px;
-}
-.footer a {
-  color: #21346B;
-}
-.footer a:hover {
-  color: #ce3333;
-}
-  </style>
+	<title>I'm Learning D3</title>
+	<!-- Load the D3 library here -->
+      <link rel="stylesheet" href="index.css">
+
+	<script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+    <script src="http://binaworks.github.io/scripts/d3-container.v0.0.1.min.js"></script>
 </head>
 <body>
-<div class="content">
-   <section class="title">
-    <a href="/">[Add: title]</a>
-  </section>
+<div class="container">
+    <div class="text_container">
+        <h1>20 years of ign game </h1>
+        <p>
+            This dataset is taken from <a href="https://www.kaggle.com/egrinstein/20-years-of-games">kaggle</a>. It contains the data of many games by <a href="https://ign.com">ign.com</a> from 1996 to 2016. This list of games is not exhaustive, however, as it does not contain all of the games from this period of time.
+        </p>
+        <p>
+            This data visualization supports the following interactions:
+            <ul>
+        <li> <i>Highlight</i> and <i>tooltip</i> by hovering the mouse over the area of the stacked area charts. </li>
+                <li> <i>Tooltip</i> by hovering the mouse over the bubble of the bubble chart. </li>
+        <li> <i>Clickable legend</i> of the area charts to filter which data to show on the area charts and which data to highlight on the bubble chart. </li>
 
-   <section>
-    <p>
-      <strong>Team Members</strong>: [Add: team members]
-    </p>
-  </section>
+             </ul>
+        </p>
+    </div>
 
-   <section>
-    <em>[Add: Interactive visualization goes here! Note that you are free to change the markup and styling on this page however you like.]</em>
-  </section>
+    <div id="scatter_container" class="svg-container">
+    <svg id = "scatter_plot"></svg>
+    </div>
+    <div id="genre_container" class="svg-container">
+    <svg id = "genres_plot"></svg>
+    </div>
+    <div id="platform_container" class="svg-container">
+    <svg id = "platforms_plot"></svg>
+    </div>
 
-  <div class="footer">
-    <a href="https://courses.cs.washington.edu/courses/cse512/19sp/">CSE 512 Data Visualization</a>
-    <a href="http://www.washington.edu">University of Washington</a>
-  </div>
- </div>
+</div>
+<script src="index.js"></script>
 </body>
-</html> 
-
+</html>
